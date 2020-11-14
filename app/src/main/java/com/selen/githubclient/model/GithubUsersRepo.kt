@@ -1,5 +1,7 @@
 package com.selen.githubclient.model
 
+import io.reactivex.rxjava3.core.Observable
+
 /**
  * @author Pyaterko Aleksey
  */
@@ -12,7 +14,7 @@ class GithubUsersRepo {
         GithubUser("login5")
     )
 
-    fun getUsers(): List<GithubUser> {
-        return repositories
+    fun getObservableUsers(): Observable<GithubUser> {
+        return Observable.fromIterable(repositories)
     }
 }
